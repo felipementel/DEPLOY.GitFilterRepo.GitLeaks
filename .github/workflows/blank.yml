@@ -28,8 +28,8 @@ jobs:
 
       - name: 📥 Checkout
         uses: actions/checkout@v6
-        # with:
-        #   fetch-depth: 0
+        with:
+          fetch-depth: 0
 
       - name: 🧱📤 Git Leaks
         uses: gitleaks/gitleaks-action@v2
