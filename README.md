@@ -83,3 +83,36 @@ git remote add origin https://github.com/felipementel/DEPLOY.GitFilterRepo.GitLe
 git push --force --all
 git push --force --tags
 ```
+
+### 7. Recriar o Histórico (orphan) e atualizar a main
+
+Caso precise iniciar um histórico limpo a partir do estado atual dos arquivos:
+
+```powershell
+git checkout --orphan temp
+git add .
+git commit -m "Initial commit"
+git branch -D main
+git branch -m main
+git push -f origin main
+```
+
+### 8. O que quem já tem o repositório precisa fazer
+
+Se o histórico foi reescrito, quem já clonou o repositório precisa sincronizar o histórico local com o remoto:
+
+```powershell
+git fetch
+git checkout main
+git reset --hard origin/main
+```
+
+### 9. Explicação do set-upstream
+
+Se a branch local `main` perder o vínculo com a branch remota, use:
+
+```powershell
+git branch --set-upstream-to=origin/main main
+```
+
+Esse comando define que a `main` local deve acompanhar (`track`) a `origin/main`. Isso é útil após reescrever o histórico ou recriar branches, garantindo que `git pull` e `git push` saibam qual branch remota usar por padrão.
