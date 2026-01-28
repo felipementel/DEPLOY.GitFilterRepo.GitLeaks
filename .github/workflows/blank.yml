@@ -1,0 +1,40 @@
+name: API Pipeline 🚀
+run-name: "${{ github.actor }} - ${{ inputs.check_security }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      check_security:
+        description: "Check Vulnerability"
+        required: true
+        type: choice
+        options:
+         - Yes
+         - No
+
+jobs:
+  build:
+    name: Build 
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+
+      - name: 📥 Checkout
+        uses: actions/checkout@v6
+
+      - name: 🧱📤 Git Leaks
+        uses: gitleaks/gitleaks-action@v2
+        if: ${{ inputs.check_security }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+          GITLEAKS_ENABLE_SUMMARY: true
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: true
+          GITLEAKS_NOTIFY_USER_LIST: '@felipementel'
