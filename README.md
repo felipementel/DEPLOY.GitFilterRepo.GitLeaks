@@ -1,4 +1,10 @@
-# DEPLOY.GitFilterRepo.GitLeaks
+![Banner](./docs/banner.png)
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/felipementel/DEPLOY.GitFilterRepo.GitLeaks/blank.yml?branch=main&style=for-the-badge)
+
+![GitHub Repo Size](https://img.shields.io/github/repo-size/felipementel/DEPLOY.GitFilterRepo.GitLeaks?style=for-the-badge)
+
+## 📖 Descrição
 
 Este projeto é um exemplo de demonstração sobre como manipular histórico do Git, especificamente para remover segredos ou dados sensíveis que foram comitados acidentalmente, utilizando ferramentas como `git-filter-repo`.
 
@@ -34,6 +40,9 @@ echo ".gitleaks" >> .gitignore
 Criar tags para simular versões (ex: uma versão com bug/vazamento).
 
 ```powershell
+# Lista as tags existentes
+git tag
+
 # Criar uma tag anotada
 git tag -a v.1.2.5 -m "feat: tag with bug"
 
