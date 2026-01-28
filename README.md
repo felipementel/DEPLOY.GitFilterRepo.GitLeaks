@@ -8,6 +8,10 @@
 
 Este projeto é um exemplo de demonstração sobre como manipular histórico do Git, especificamente para remover segredos ou dados sensíveis que foram comitados acidentalmente, utilizando ferramentas como `git-filter-repo`.
 
+> 🔍 **Análise da Pipeline:** Veja os relatórios de análise da esteira CI/CD:
+> - 📄 [Resumo Executivo](./docs/RESUMO-EXECUTIVO.md) - Visão geral rápida
+> - 📊 [Relatório Completo](./docs/pipeline-analysis-report.md) - Análise detalhada com logs
+
 ## 📋 Pré-requisitos
 
 Certifique-se de ter o Python instalado e a ferramenta `git-filter-repo`.
