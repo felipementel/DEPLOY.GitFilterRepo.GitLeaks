@@ -50,7 +50,7 @@ git push --delete origin v2
 Criar um arquivo `replace.txt` definindo o que deve ser substituído. O formato é `texto_original==>texto_novo`.
 
 ```powershell
-"**REMOVED**==>**REMOVED**" | Out-File replace.txt -Encoding utf8
+"texto_original==>**REMOVED**" | Out-File replace.txt -Encoding utf8
 ```
 
 ### 4. Analisar o Repositório (Opcional)
@@ -77,7 +77,7 @@ Após reescrever o histórico, é necessário forçar o push para o remoto.
 
 ```powershell
 # Adicionar o remoto (se necessário)
-git remote add origin https://github.com/felipementel/DEPLOY.GitFilterRepo.GitLeaks
+git remote add origin https://github.com/felipementel/DEPLOY.GitFilterRepo.GitLeaks.git
 
 # Forçar a atualização de todas as branches e tags
 git push --force --all
