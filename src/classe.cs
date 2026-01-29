@@ -1,6 +1,6 @@
 public class CanalDEPLOY
 {
-    public string chave = "389123yunfg34iug348r739ht";
+    public string chave = "**REMOVED**";
 
     public string chave2 = "";
 
