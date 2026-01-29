@@ -33,7 +33,7 @@ jobs:
 
       - name: 🧱📤 Git Leaks
         uses: gitleaks/gitleaks-action@v2
-        if: ${{ inputs.check_security }}
+        if: ${{ inputs.check_security == 'Yes' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
