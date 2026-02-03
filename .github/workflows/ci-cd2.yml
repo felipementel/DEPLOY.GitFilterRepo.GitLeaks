@@ -1,4 +1,4 @@
-name: API Pipeline 🚀
+name: API Pipeline 2 🚀
 run-name: "${{ github.actor }} - ${{ inputs.check_security }}"
 
 on:
